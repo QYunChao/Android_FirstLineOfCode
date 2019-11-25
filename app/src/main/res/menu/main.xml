@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/start_a_group_chat"
+        android:title="@string/start_a_group_chat"/>
+
+    <item
+        android:id="@+id/add_a_new_friend"
+        android:title="@string/add_a_new_friend"/>
+
+    <item
+        android:id="@+id/scan_qrcode"
+        android:title="@string/scan_qrcode"/>
+
+    <item
+        android:id="@+id/payment"
+        android:title="@string/payment"/>
+
+    <item
+        android:id="@+id/help"
+        android:title="@string/help"/>
+
+</menu>

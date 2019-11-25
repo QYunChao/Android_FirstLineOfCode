@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My First Android Demo</string>
+    <string name="first_button">First Button</string>
+
+    <string name="start_a_group_chat">发起群聊</string>
+    <string name="add_a_new_friend">添加朋友</string>
+    <string name="scan_qrcode">扫一扫</string>
+    <string name="payment">收付款</string>
+    <string name="help">帮助与反馈</string>
 </resources>
