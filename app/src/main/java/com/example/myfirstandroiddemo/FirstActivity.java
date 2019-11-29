@@ -3,6 +3,8 @@ package com.example.myfirstandroiddemo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,12 +19,73 @@ public class FirstActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
+
         Button firstButton = (Button)findViewById(R.id.first_button);
         firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(FirstActivity.this, "Click First Button",
                         Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button finishButton = (Button) findViewById(R.id.finish_button);
+        finishButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
+
+        Button explicitIntentButton = (Button) findViewById(R.id.explicit_intent_button);
+        explicitIntentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button implicitIntentButton = (Button) findViewById(R.id.implicit_intent_button);
+        implicitIntentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent("com.example.activitytest.ACTION_START");
+                intent.addCategory("android.intent.category.MY_COTEGORY");
+                startActivity(intent);
+            }
+        });
+
+        Button viewButton = (Button) findViewById(R.id.view_button);
+        viewButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addCategory("android.intent.category.BROWSABLE");
+                intent.setData(Uri.parse("http://www.baidu.com"));/*tel:10086*/
+                startActivity(intent);
+            }
+        });
+
+        Button sendDataToNextIntentButton = (Button) findViewById(R.id.send_data_to_next_intent);
+        sendDataToNextIntentButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String data = "Hello Second Activity";
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("extra_data", data);
+                startActivity(intent);
+            }
+        });
+
+        Button sendDataToPreIntent = (Button) findViewById(R.id.send_data_to_pre_intent);
+        sendDataToPreIntent.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.addCategory("android.intent.category.BROWSABLE");
+                intent.setData(Uri.parse("http://www.baidu.com"));/*tel:10086*/
+                startActivity(intent);
             }
         });
     }

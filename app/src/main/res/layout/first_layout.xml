@@ -10,4 +10,40 @@
         android:layout_height="wrap_content"
         android:text="@string/first_button" />
 
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish_button"/>
+
+    <Button
+        android:id="@+id/explicit_intent_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/explicit_intent_button"/>
+
+    <Button
+        android:id="@+id/implicit_intent_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/implicit_intent_button"/>
+
+    <Button
+        android:id="@+id/view_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_button"/>
+
+    <Button
+        android:id="@+id/send_data_to_next_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_data_to_next_intent"/>
+
+    <Button
+        android:id="@+id/send_data_to_pre_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_data_to_pre_intent"/>
+
 </LinearLayout>
