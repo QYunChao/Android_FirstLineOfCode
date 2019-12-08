@@ -44,6 +44,12 @@
         android:id="@+id/send_data_to_pre_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/send_data_to_pre_intent"/>
+        android:text="@string/next_intent_send_data_to_this_intent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

@@ -10,4 +10,10 @@
         android:layout_height="wrap_content"
         android:text="@string/second_button" />
 
+    <Button
+        android:id="@+id/send_data_to_pre_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_data_to_pre_intent" />
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,13 +15,15 @@ import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
+    private final static int REQUEST_CODE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
 
-        Button firstButton = (Button)findViewById(R.id.first_button);
+        Button firstButton = findViewById(R.id.first_button);
         firstButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +32,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button finishButton = (Button) findViewById(R.id.finish_button);
+        Button finishButton = findViewById(R.id.finish_button);
         finishButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -37,7 +40,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button explicitIntentButton = (Button) findViewById(R.id.explicit_intent_button);
+        Button explicitIntentButton = findViewById(R.id.explicit_intent_button);
         explicitIntentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +49,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button implicitIntentButton = (Button) findViewById(R.id.implicit_intent_button);
+        Button implicitIntentButton = findViewById(R.id.implicit_intent_button);
         implicitIntentButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -56,7 +59,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button viewButton = (Button) findViewById(R.id.view_button);
+        Button viewButton = findViewById(R.id.view_button);
         viewButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -67,7 +70,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button sendDataToNextIntentButton = (Button) findViewById(R.id.send_data_to_next_intent);
+        Button sendDataToNextIntentButton = findViewById(R.id.send_data_to_next_intent);
         sendDataToNextIntentButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -78,14 +81,12 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        Button sendDataToPreIntent = (Button) findViewById(R.id.send_data_to_pre_intent);
+        Button sendDataToPreIntent = findViewById(R.id.send_data_to_pre_intent);
         sendDataToPreIntent.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.addCategory("android.intent.category.BROWSABLE");
-                intent.setData(Uri.parse("http://www.baidu.com"));/*tel:10086*/
-                startActivity(intent);
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
     }
@@ -123,5 +124,21 @@ public class FirstActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent){
+        switch (requestCode){
+            case REQUEST_CODE:
+                if(resultCode == RESULT_OK){
+                    String data = intent.getStringExtra("return_data");
+                    Log.i("return_data", data);
+                    Toast.makeText(FirstActivity.this, data,
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

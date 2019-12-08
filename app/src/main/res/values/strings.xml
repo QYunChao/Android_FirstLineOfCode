@@ -7,6 +7,7 @@
     <string name="view_button">调用浏览器</string>
     <string name="send_data_to_next_intent">向下一个活动传递数据</string>
     <string name="send_data_to_pre_intent">向上一个活动传递数据</string>
+    <string name="next_intent_send_data_to_this_intent">下个页面传数据给本页面</string>
 
     <string name="start_a_group_chat">发起群聊</string>
     <string name="add_a_new_friend">添加朋友</string>
