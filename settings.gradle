@@ -1,2 +1,2 @@
-include ':app', ':tableball'
+include ':app', ':tableball', ':c2activitylifecycletest'
 rootProject.name='My First Android Demo'
