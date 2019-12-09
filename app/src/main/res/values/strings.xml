@@ -17,4 +17,7 @@
 
     <string name="second_button">Second Button</string>
     <string name="third_button">Third Button</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
