@@ -1,19 +1,20 @@
 package com.example.myfirstandroiddemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements TabFragment.OnFragmentInteractionListener{
 
     private String[] titles = new String[]{"微信", "通讯录", "发现", "我"};
     private TabLayout mTabLayout;
@@ -62,5 +63,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         mTabLayout.getTabAt(0).getCustomView().setSelected(true);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
