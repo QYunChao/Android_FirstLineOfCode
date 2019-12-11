@@ -1,7 +1,12 @@
 package com.example.myfirstandroiddemo;
 
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,6 +43,13 @@ public class MainActivity extends AppCompatActivity implements TabFragment.OnFra
         mViewPager = findViewById(R.id.viewpager);
         mTabLayout = findViewById(R.id.tablayout);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = MainActivity.this.getWindow();
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(MainActivity.this.getResources().getColor(R.color.colorPrimary));
+        }
+
         mTitles = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             mTitles.add(titles[i]);
@@ -68,5 +80,11 @@ public class MainActivity extends AppCompatActivity implements TabFragment.OnFra
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 }
