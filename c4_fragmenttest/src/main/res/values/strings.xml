@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">c4_FragmentTest</string>
+    <string name="test_button">test_button</string>
+    <string name="test_textview">This is right Fragment</string>
+    <string name="another_test_textview">This is another right Fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
