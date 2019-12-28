@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My First Android Demo</string>
+    <string name="app_name">Android Demo</string>
     <string name="first_button">First Button</string>
     <string name="finish_button">Finish Button</string>
     <string name="explicit_intent_button">显式调用Intent</string>

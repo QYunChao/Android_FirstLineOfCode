@@ -57,7 +57,8 @@ public class TabFragment extends Fragment {
 
     public static TabFragment newInstance(int index){
         Bundle bundle = new Bundle();
-        bundle.putInt("index", 'A' + index);
+        String string = String.format("这是第%d个界面", index);
+        bundle.putString("index", string);
         TabFragment fragment = new TabFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -78,7 +79,7 @@ public class TabFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tab, null);
         textView = view.findViewById(R.id.text);
-        textView.setText(String.valueOf((char) getArguments().getInt("index")));
+        textView.setText(String.valueOf(getArguments().getString("index")));
         return view;
     }
 
